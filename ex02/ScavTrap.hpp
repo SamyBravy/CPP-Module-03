@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 18:02:31 by sdell-er          #+#    #+#             */
-/*   Updated: 2024/11/26 23:47:41 by samuele          ###   ########.fr       */
+/*   Created: 2024/11/26 23:23:07 by samuele           #+#    #+#             */
+/*   Updated: 2024/11/27 00:06:58 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap claptrap1("Ciao");
-	ClapTrap claptrap2(claptrap1);
-	ClapTrap claptrap3("Nonna");
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& src);
+        ~ScavTrap();
+        ScavTrap& operator=(const ScavTrap& src);
 
-	claptrap2.attack("Nonna");
-	claptrap3.takeDamage(5);
-	for (int i = 0; i < 11; ++i)
-		claptrap3.beRepaired(4);
-	claptrap3.attack("Nessuno");
+        void attack(const std::string& target);
+        void guardGate();
+};
 
-	return 0;
-}
+#endif

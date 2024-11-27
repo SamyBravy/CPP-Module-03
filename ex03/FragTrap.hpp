@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 18:02:31 by sdell-er          #+#    #+#             */
-/*   Updated: 2024/11/26 23:47:41 by samuele          ###   ########.fr       */
+/*   Created: 2024/11/26 23:54:19 by samuele           #+#    #+#             */
+/*   Updated: 2024/11/27 00:31:51 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap claptrap1("Ciao");
-	ClapTrap claptrap2(claptrap1);
-	ClapTrap claptrap3("Nonna");
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(const FragTrap& src);
+        ~FragTrap();
+        FragTrap& operator=(const FragTrap& src);
 
-	claptrap2.attack("Nonna");
-	claptrap3.takeDamage(5);
-	for (int i = 0; i < 11; ++i)
-		claptrap3.beRepaired(4);
-	claptrap3.attack("Nessuno");
+        void highFivesGuys(void);
+};
 
-	return 0;
-}
+#endif
