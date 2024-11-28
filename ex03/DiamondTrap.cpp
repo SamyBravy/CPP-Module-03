@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sdell-er <sdell-er@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 00:07:12 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/27 01:45:28 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/28 17:28:16 by sdell-er         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,10 @@ void    DiamondTrap::attack(const std::string& target)
 
 void    DiamondTrap::whoAmI()
 {
+	if (_hit_points == 0)
+	{
+		std::cout << "DiamondTrap " << _name << " has no hit points left!" << std::endl;
+		return ;
+	}
     std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;
 }
