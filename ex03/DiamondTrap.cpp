@@ -6,13 +6,13 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 00:07:12 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/27 01:45:28 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:22:03 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : DiamondTrap("")
+DiamondTrap::DiamondTrap() : ClapTrap("_clap_name"), ScavTrap(), FragTrap()
 {
     std::cout << "DiamondTrap default constructor called" << std::endl;
 }
@@ -25,7 +25,7 @@ DiamondTrap::DiamondTrap(std::string str_name) : ClapTrap(str_name + "_clap_name
     std::cout << "DiamondTrap " << _name << " constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& src)
+DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
 {
     *this = src;
     std::cout << "DiamondTrap " << _name << " copy constructor called" << std::endl;
