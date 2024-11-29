@@ -6,7 +6,7 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 00:07:12 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/29 23:22:03 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:33:02 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,10 @@ void    DiamondTrap::attack(const std::string& target)
 
 void    DiamondTrap::whoAmI()
 {
+	if (_hit_points == 0)
+	{
+		std::cout << "DiamondTrap " << _name << " has no hit points left!" << std::endl;
+		return ;
+	}
     std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;
 }

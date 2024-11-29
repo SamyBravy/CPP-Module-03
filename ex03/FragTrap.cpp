@@ -6,7 +6,7 @@
 /*   By: samuele <samuele@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 23:54:32 by samuele           #+#    #+#             */
-/*   Updated: 2024/11/29 23:20:33 by samuele          ###   ########.fr       */
+/*   Updated: 2024/11/29 23:33:06 by samuele          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,10 @@ FragTrap&   FragTrap::operator=(const FragTrap& src)
 
 void    FragTrap::highFivesGuys(void)
 {
+	if (_hit_points == 0)
+	{
+		std::cout << "FragTrap " << _name << " has no hit points left!" << std::endl;
+		return ;
+	}
     std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 }
